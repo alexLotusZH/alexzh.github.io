@@ -2908,74 +2908,110 @@ input, select, textarea {
 
 	}
 
-
 /* 新Header样式 */
 .header-wrapper {
     display: flex;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+    padding: 10px 0; /* 调整内边距 */
     position: fixed;
     top: 0;
     width: 100%;
-	height: 7%;
+    height: fit-content;
     z-index: 1000;
-    border-bottom: 0; 
-	backdrop-filter: blur(10px); 
+    border-bottom: 0; /* 移除边框 */
+    backdrop-filter: blur(10px); /* 添加模糊效果 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体族 */
 }
 
-#header h1 {
-    font-size: 60px; /* 增加字体大小 */
-    font-weight: bold;
-    margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体族 */
-}
-
-#header h2{
-	font-size: 25px;	
-	font-weight: lighter;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体族 */
-}
 .header-list {
-    display: inline;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 40px; /* 增加间距 */
 }
 
 .header-list li {
     display: inline;
-	margin-right: 30px; /* 增加右边距 */
+    margin-right: 20px; /* 增加右边距 */
 }
 
 .header-list a {
     text-decoration: none;
-    color: black;
-    font-size: 20px; /* 增加字体大小 */
+    color: grey; /* 默认字体颜色 */
+    font-size: 24px; /* 增加字体大小 */
+    font-weight: normal; /* 默认字体粗细 */
+    transition: color 0.3s, font-weight 0.3s; /* 添加过渡效果 */
 }
 
+.header-list a:hover {
+    color: black; /* 鼠标悬浮时字体颜色 */
+    font-weight: bold; /* 鼠标悬浮时字体粗细 */
+}
+
+
+#header h1 {
+    font-size: 48px; /* 增加字体大小 */
+    font-weight: bold; /* 设置字体粗细 */
+    margin: 0;
+    text-align: center; /* 居中对齐 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体族 */
+}
+
+#header h2 {
+    font-size: 25px; /* 增加字体大小 */
+    font-weight: normal; /* 设置字体粗细 */
+	color: gray;
+    margin: 0;
+    text-align: center; /* 居中对齐 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体族 */
+}
+
+
 body.is-preload .header-extra {
-    top: 60px; /* initial top value to show header-extra */
+    top: 60px;
 }
 
 body.scrolled .header-extra {
-    top: -200px; /* 隐藏header-extra */
+    top: -200px;
 }
 
 /* main section padding to prevent overlap */
 main {
-    padding-top: 140px; /* Adjust this value based on the combined height of header-wrapper and header-extra */
+    padding-top: 140px;
 }
 
 /* 清除可能存在的全局边距和填充 */
 body, html {
     margin: 0;
     padding: 0;
+    background-color: white; /* 设置背景颜色为白色 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体族 */
+    overflow-x: hidden; /* 防止水平滚动 */
 }
 
 #page-wrapper {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    overflow: hidden; /* 防止额外滚动 */
+    position: relative; /* 确保背景可见 */
 }
 
 #header {
     padding-top: 70px; /* 添加填充以避免被遮挡 */
     margin: 0;
+}
+
+/* 新增样式，设置背景图片或颜色 */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0; /* 背景颜色或图片 */
+    z-index: -1; /* 确保背景在所有内容之后 */
 }

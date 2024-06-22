@@ -64,6 +64,7 @@
 })(jQuery);
 
 
+// Ensure the initial load animations are handled
 window.addEventListener('scroll', function() {
     var body = document.body;
 
@@ -80,3 +81,32 @@ window.addEventListener('load', function() {
     }, 100);
 });
 
+
+
+// Ensure the initial load animations are handled
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.body.classList.remove('is-preload');
+    }, 100);
+});
+
+// Handle scroll event to add/remove 'scrolled' class
+window.addEventListener('scroll', function() {
+    var body = document.body;
+    if (window.scrollY > 0) {
+        body.classList.add('scrolled');
+    } else {
+        body.classList.remove('scrolled');
+    }
+});
+
+// Handle mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    var menuToggle = document.querySelector('.menu-toggle');
+    var nav = document.querySelector('.header-list');
+    menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+    });
+});
+
+// Handle mouse scroll
