@@ -53,6 +53,7 @@ table {
 
 body {
 	-webkit-text-size-adjust: none;
+	background-color: white;
 }
 
 mark {
@@ -76,10 +77,13 @@ input, select, textarea {
 
 	html {
 		box-sizing: border-box;
+		background-color: white;
 	}
 
 	*, *:before, *:after {
-		box-sizing: inherit;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
 	}
 
 	body {
@@ -2903,3 +2907,75 @@ input, select, textarea {
 			}
 
 	}
+
+
+/* 新Header样式 */
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+	height: 7%;
+    z-index: 1000;
+    border-bottom: 0; 
+	backdrop-filter: blur(10px); 
+}
+
+#header h1 {
+    font-size: 60px; /* 增加字体大小 */
+    font-weight: bold;
+    margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体族 */
+}
+
+#header h2{
+	font-size: 25px;	
+	font-weight: lighter;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体族 */
+}
+.header-list {
+    display: inline;
+}
+
+.header-list li {
+    display: inline;
+	margin-right: 30px; /* 增加右边距 */
+}
+
+.header-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px; /* 增加字体大小 */
+}
+
+body.is-preload .header-extra {
+    top: 60px; /* initial top value to show header-extra */
+}
+
+body.scrolled .header-extra {
+    top: -200px; /* 隐藏header-extra */
+}
+
+/* main section padding to prevent overlap */
+main {
+    padding-top: 140px; /* Adjust this value based on the combined height of header-wrapper and header-extra */
+}
+
+/* 清除可能存在的全局边距和填充 */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+#page-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    padding-top: 70px; /* 添加填充以避免被遮挡 */
+    margin: 0;
+}
