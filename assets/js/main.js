@@ -62,3 +62,21 @@
 				});
 
 })(jQuery);
+
+
+window.addEventListener('scroll', function() {
+    var body = document.body;
+
+    if (window.scrollY > 0) {
+        body.classList.add('scrolled');
+    } else {
+        body.classList.remove('scrolled');
+    }
+});
+
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.body.classList.remove('is-preload');
+    }, 100);
+});
+
