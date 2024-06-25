@@ -3015,3 +3015,88 @@ body::before {
     background: #f0f0f0; /* 背景颜色或图片 */
     z-index: -1; /* 确保背景在所有内容之后 */
 }
+
+
+/* Homepage Containers */
+/* Ensure full height for container */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+	width: 100%;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.image-container .product1 {
+	margin-bottom: 0;
+	padding-top: 20px;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+}
+
+.product1 { 
+	height: 100%;
+	width: 100%;
+    background-image: url(images/car01.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+}
+
+.image-container:hover {
+    transform: scale(1.01);
+}
+
+.product1 .title{
+    text-align: center;
+	margin-top: 20px;
+}
+
+.title h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+	color: White;
+}
+
+.title p {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.cta-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-links a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.cta-links a:hover {
+    color: #0056b3;
+}
